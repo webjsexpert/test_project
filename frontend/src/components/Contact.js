@@ -57,7 +57,7 @@ class Settings extends React.Component {
   
   componentDidMount() {
     
-    axios.get('/getdata',{
+    axios.get('/api/v1/contacts',{
       credentials: 'include',
       method: 'GET',
       headers: {    
