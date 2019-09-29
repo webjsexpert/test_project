@@ -17,3 +17,8 @@
     color:#ddd;
     padding-top:20px;
 }
+.tab-content{
+    border-left: 2px solid #eceeef;
+    border-right: 2px solid #eceeef;
+    border-bottom: 2px solid #eceeef;
+}
