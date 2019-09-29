@@ -26,7 +26,6 @@ class Register extends React.Component {
     }
   }
   render() {
-    console.log(this.props)
     return (
       <div className="auth-page">
         <div className="row">

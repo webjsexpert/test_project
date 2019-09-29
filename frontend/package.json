@@ -12,6 +12,7 @@
     "bootstrap": "^4.3.1",
     "history": "^4.6.3",
     "marked": "^0.3.6",
+    "multi-select-react": "^0.1.8",
     "prop-types": "^15.5.10",
     "react": "^16.3.0",
     "react-bootstrap": "^1.0.0-beta.12",
