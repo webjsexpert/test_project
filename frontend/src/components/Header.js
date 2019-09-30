@@ -21,32 +21,23 @@ function Headline() {
 const LoggedOutView = props => {
   if (!props.currentUser) {
     return (
-      <Navbar bg="light" expand="lg">
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-        </Nav>
-        <Form inline>
-              <ul className="nav navbar-nav pull-xs-right">
-                  <li className="nav-item">
-                    <Link to="/" className="nav-link">
-                      Home
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link to="/login" className="nav-link">
-                      Sign in
-                    </Link>
-                  </li>
-                  {/* <li className="nav-item">
-                    <Link to="/register" className="nav-link">
-                      Sign up
-                    </Link>
-                  </li> */}
-            </ul>
-        </Form>
-      </Navbar.Collapse>
-    </Navbar>
+      <ul className="nav navbar-nav pull-xs-right">
+          <li className="nav-item">
+            <Link to="/" className="nav-link">
+              Home
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/login" className="nav-link">
+              Sign in
+            </Link>
+          </li>
+          {/* <li className="nav-item">
+            <Link to="/register" className="nav-link">
+              Sign up
+            </Link>
+          </li> */}
+    </ul>
     );
   }
   return null;
@@ -55,32 +46,22 @@ const LoggedOutView = props => {
 const LoggedInView = props => {
   if (props.currentUser) {
     return (
-      <Navbar bg="light" expand="lg">
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-        </Nav>
-        <Form inline>
         <ul className="nav navbar-nav pull-xs-right">
-
             <li className="nav-item">
               <Link to="/" className="nav-link">
                   Home
               </Link>
             </li>
-
             <li className="nav-item">
               <Link to="/contact" className="nav-link">
                 <i className="ion-compose"></i>&nbsp;Contact
               </Link>
             </li>
-
             <li className="nav-item">
               <Link to="/profile" className="nav-link">
                 <i className="ion-gear-a"></i>&nbsp;Profile
               </Link>
             </li>
-
             <li className="nav-item">
               <Link
                 to={`/login`}
@@ -95,10 +76,6 @@ const LoggedInView = props => {
               </a>
             </li>
             </ul>
-          
-        </Form>
-      </Navbar.Collapse>
-    </Navbar>
     );
   }
 
@@ -110,18 +87,20 @@ class Header extends React.Component {
   render() {
     const userName = window.localStorage.getItem('jwt');
     return (
-      <nav className="navbar navbar-light">
         <div className="container">
-
-          <Link to="/" className="navbar-brand">
-            {this.props.appName.toLowerCase()}
-          </Link>
-
-          <LoggedOutView currentUser={userName} />
-
-          <LoggedInView currentUser={userName} />
+                <Navbar bg="light" expand="lg">
+                <Navbar.Brand href="#home">{this.props.appName}</Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                  <Nav className="mr-auto">
+                  </Nav>
+                  <Form inline>
+                      <LoggedOutView currentUser={userName} />
+                      <LoggedInView currentUser={userName} />
+                  </Form>
+                </Navbar.Collapse>
+              </Navbar>
         </div>
-      </nav>
     );
   }
 }

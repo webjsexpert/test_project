@@ -34,3 +34,18 @@
 .btn-toolbar{
     display: block;
 }
+.user-pic {
+    height: 26px;
+    border-radius: 50px;
+    float: left;
+    margin-right: 5px;
+}
+.text-xs-center {
+    text-align: center!important;
+}
+button:not(:disabled){
+    margin-left: 10px;
+}
+.settings-page{
+    padding:30px
+}
