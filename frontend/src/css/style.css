@@ -22,3 +22,15 @@
     border-right: 2px solid #eceeef;
     border-bottom: 2px solid #eceeef;
 }
+.collapse{
+    display: block;
+}
+.navbar-nav .nav-item {
+    margin-left: 1rem;
+}
+.navbar>.container, .navbar>.container-fluid{
+    align-items: end
+}
+.btn-toolbar{
+    display: block;
+}

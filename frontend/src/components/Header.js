@@ -1,6 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { Navbar } from 'react-bootstrap';
+import { Nav } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 import {
   LOGOUT
 } from '../constants/actionTypes';
@@ -18,27 +21,32 @@ function Headline() {
 const LoggedOutView = props => {
   if (!props.currentUser) {
     return (
-      <ul className="nav navbar-nav pull-xs-right">
-
-        <li className="nav-item">
-          <Link to="/" className="nav-link">
-            Home
-          </Link>
-        </li>
-
-        <li className="nav-item">
-          <Link to="/login" className="nav-link">
-            Sign in
-          </Link>
-        </li>
-
-        {/* <li className="nav-item">
-          <Link to="/register" className="nav-link">
-            Sign up
-          </Link>
-        </li> */}
-
-      </ul>
+      <Navbar bg="light" expand="lg">
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+        </Nav>
+        <Form inline>
+              <ul className="nav navbar-nav pull-xs-right">
+                  <li className="nav-item">
+                    <Link to="/" className="nav-link">
+                      Home
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/login" className="nav-link">
+                      Sign in
+                    </Link>
+                  </li>
+                  {/* <li className="nav-item">
+                    <Link to="/register" className="nav-link">
+                      Sign up
+                    </Link>
+                  </li> */}
+            </ul>
+        </Form>
+      </Navbar.Collapse>
+    </Navbar>
     );
   }
   return null;
@@ -47,40 +55,50 @@ const LoggedOutView = props => {
 const LoggedInView = props => {
   if (props.currentUser) {
     return (
-      <ul className="nav navbar-nav pull-xs-right">
+      <Navbar bg="light" expand="lg">
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+        </Nav>
+        <Form inline>
+        <ul className="nav navbar-nav pull-xs-right">
 
-        <li className="nav-item">
-          <Link to="/" className="nav-link">
-            Home
-          </Link>
-        </li>
+            <li className="nav-item">
+              <Link to="/" className="nav-link">
+                  Home
+              </Link>
+            </li>
 
-        <li className="nav-item">
-          <Link to="/contact" className="nav-link">
-            <i className="ion-compose"></i>&nbsp;Contact
-          </Link>
-        </li>
+            <li className="nav-item">
+              <Link to="/contact" className="nav-link">
+                <i className="ion-compose"></i>&nbsp;Contact
+              </Link>
+            </li>
 
-        <li className="nav-item">
-          <Link to="/profile" className="nav-link">
-            <i className="ion-gear-a"></i>&nbsp;Profile
-          </Link>
-        </li>
+            <li className="nav-item">
+              <Link to="/profile" className="nav-link">
+                <i className="ion-gear-a"></i>&nbsp;Profile
+              </Link>
+            </li>
 
-        <li className="nav-item">
-          <Link
-            to={`/login`}
-            className="nav-link">
-            <img src={require('../img/profile.png')} className="user-pic" alt={props.currentUser.username} />
-            {props.currentUser}
-          </Link>
-        </li>
-        <li className="nav-item">
-          <a href={"/login"} onClick={Headline} className="nav-link">
-            Logout
-          </a>
-        </li>
-      </ul>
+            <li className="nav-item">
+              <Link
+                to={`/login`}
+                className="nav-link">
+                <img src={require('../img/profile.png')} className="user-pic" alt={props.currentUser.username} />
+                {props.currentUser}
+              </Link>
+            </li>
+            <li className="nav-item">
+              <a href={"/login"} onClick={Headline} className="nav-link">
+                Logout
+              </a>
+            </li>
+            </ul>
+          
+        </Form>
+      </Navbar.Collapse>
+    </Navbar>
     );
   }
 
