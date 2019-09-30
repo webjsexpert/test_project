@@ -38,6 +38,7 @@ class Login extends React.Component {
     }
     this.submitForm = (email, password) => ev => {
       ev.preventDefault();
+      
       if(email==="Admin"&&password==="test1A"){
         
         userInfo['userName']=email;
@@ -55,8 +56,9 @@ class Login extends React.Component {
   }
 
   render() {
-    const email = this.props.email;
-    const password = this.props.password;
+      const email = this.props.email;
+      const password = this.props.password;
+
     return (
       <div className="auth-page">
         <div className="container page">
@@ -80,7 +82,7 @@ class Login extends React.Component {
                       className="form-control form-control-lg"
                       type="text"
                       placeholder="Username"
-                      value={email}
+                      // value={ema1il}
                       onChange={this.changeEmail} />
                   </fieldset>
 
@@ -89,7 +91,7 @@ class Login extends React.Component {
                       className="form-control form-control-lg"
                       type="password"
                       placeholder="Password"
-                      value={password}
+                      // value={password}
                       onChange={this.changePassword} />
                   </fieldset>
 

@@ -18,9 +18,9 @@
     padding-top:20px;
 }
 .tab-content{
-    border-left: 2px solid #eceeef;
-    border-right: 2px solid #eceeef;
-    border-bottom: 2px solid #eceeef;
+    border-left: 1px solid #e2e2e2;
+    border-right: 1px solid #e2e2e2;
+    border-bottom: 1px solid #e2e2e2;
 }
 .collapse{
     display: block;
@@ -48,4 +48,8 @@ button:not(:disabled){
 }
 .settings-page{
     padding:30px
+}
+.error-messages{
+    color:#ce0606;
+    font-weight: bold;
 }
